@@ -1,6 +1,6 @@
 import { FC, ReactElement, ReactNode, useState } from 'react';
 import styles from './Register.module.css';
- 
+
 //import { LoginData } from '../../Models/logindata';
  
  
@@ -10,7 +10,7 @@ const Register: FC<RegisterProps> = () => {
  
     return (
         <>
-        
+        paperino
         </>
     );
 }
