@@ -72,14 +72,14 @@ const Login: FC<LoginProps> = () => {
             console.log(error);
         });
          */
-    
-        if(email === 'simone@gmail.com' || password === 'paperino'){
+
+        if(email === 'p.tardiolobonifazi@vivasoft.it' || password === 'Paperino'){
           setIsAuthenticated(true);
           localStorage.setItem("isAuthenticated", 'true');
           // To navigate to another component
           navigate("/");
         }
-      };
+    };
 
     return (
         <>
@@ -132,14 +132,10 @@ const Login: FC<LoginProps> = () => {
             >
               Login
             </Button>
-
-           
             
             <Grid2 container justifyContent={"flex-end"}>
               <Grid2 size={{ xs: 6, md: 8 }}>
-                
-                    {/* <Link to="/register">Don't have an account? Register</Link> */}
-                    Don't have an account? Register
+                    <Link to="/register">Don't have an account? Register</Link>
               </Grid2>
             </Grid2>
           </Box>
