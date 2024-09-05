@@ -1,7 +1,7 @@
 import { FC, ReactElement, ReactNode, useState } from 'react';
 import styles from './Logout.module.css';
- 
- 
+
+
 import { LockOutlined } from "@mui/icons-material";
 import {
   Container,
@@ -11,26 +11,26 @@ import {
   Typography,
   Button
 } from "@mui/material";
- 
- 
+
+
 // To navigate to another component
 import { useNavigate } from 'react-router-dom';
- 
+
 interface LogoutProps {};
- 
+
 const Logout: FC<LogoutProps> = () => {
     // To navigate to another component
     const navigate = useNavigate();
     const [isAuthenticated, setIsAuthenticated] = useState(false);
- 
- 
+
+
     const handleCancel = () => {
         // To navigate to another component
         navigate("/");
     }
- 
+
     const handleAPILogout = async () => {
- 
+
         /* const API_URL = urlRootAPI + "ManageAccount/Logout";
         console.log(API_URL);
         debugger;
@@ -44,7 +44,7 @@ const Logout: FC<LogoutProps> = () => {
             setIsAuthenticated(response.data);
             console.log(response.data);
             console.log(response.status);
-   
+    
             localStorage.clear();
             // To navigate to another component
             navigate("/");
@@ -54,13 +54,13 @@ const Logout: FC<LogoutProps> = () => {
           localStorage.clear()
           console.log(error);
         }); */
-       
+        
         setIsAuthenticated(false);
         localStorage.clear();
         // To navigate to another component
         navigate("/");
       };
- 
+
     return (
         <>
         <Container maxWidth="xs">
@@ -77,7 +77,7 @@ const Logout: FC<LogoutProps> = () => {
                 <LockOutlined />
               </Avatar>
               <Typography variant="h5">Are you sure to Logout?</Typography>
-   
+    
               <Button color="error"
                   variant="contained"
                   sx={{ mt: 3, mb: 2 }}
@@ -85,7 +85,7 @@ const Logout: FC<LogoutProps> = () => {
                 >
                   Cancel
                 </Button>
-   
+    
                 <Button
                   variant="contained"
                   sx={{ mt: 3, mb: 2 }}
@@ -99,5 +99,5 @@ const Logout: FC<LogoutProps> = () => {
         </>
       )
 }
- 
+
 export default Logout;

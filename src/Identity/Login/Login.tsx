@@ -73,7 +73,7 @@ const Login: FC<LoginProps> = () => {
         });
          */
 
-        if(email === 'p.tardiolobonifazi@vivasoft.it' || password === 'Paperino'){
+        if(email === 'simone@gmail.com' || password === 'paperino'){
           setIsAuthenticated(true);
           localStorage.setItem("isAuthenticated", 'true');
           // To navigate to another component

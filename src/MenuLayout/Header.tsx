@@ -8,7 +8,7 @@ const Header: FC<HeaderProps> = () => {
     return (
         <>
         Header
-         </>
+        </>
   );
 };
 

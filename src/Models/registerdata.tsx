@@ -4,7 +4,7 @@ export class RegisterData {
     private Password: string;
     private ConfirmPassword: string;
     private Address: string;
- 
+
     constructor(Username: string, Email: string, Password: string, ConfirmPassword: string, Address: string) {
         this.Username = Username;
         this.Email = Email;
@@ -12,7 +12,7 @@ export class RegisterData {
         this.ConfirmPassword = ConfirmPassword;
         this.Address = Address;
     }
- 
+
     checkPassword(): boolean {
         let isPasswordConfirmed = false;
         if(this.Password === this.ConfirmPassword)
@@ -21,5 +21,5 @@ export class RegisterData {
         }  
         return isPasswordConfirmed
     }
-   
+    
 }

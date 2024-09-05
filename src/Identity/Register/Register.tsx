@@ -1,11 +1,11 @@
 import { FC, ReactElement, ReactNode, useState } from 'react';
 import styles from './Register.module.css';
- 
+
 import { LockOutlined } from "@mui/icons-material";
 import { Link, useNavigate } from "react-router-dom";
- 
+
 import { RegisterData } from '../../Models/registerdata';
- 
+
 import {
     Avatar,
     Box,
@@ -16,22 +16,22 @@ import {
     TextField,
     Typography,
   } from "@mui/material";
- 
- 
+
+
 interface RegisterProps {};
- 
+
 const Register: FC<RegisterProps> = () => {
     // To navigate to another component
     const navigate = useNavigate();
- 
+
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmpassword, setConfirmPassword] = useState("");
     const [address, setAddress] = useState("");
- 
+
     const [isRegistered, setIsRegistered] = useState(false);
- 
+
     // Call rest api using AXIOS ASYNC
     const handleRegister = async () => {
         localStorage.setItem("username", name);
@@ -39,10 +39,10 @@ const Register: FC<RegisterProps> = () => {
         localStorage.setItem("password", password);
         localStorage.setItem("confirmpassword", confirmpassword);
         localStorage.setItem("address", address);
- 
+
         /* const API_URL = urlRootAPI + "ManageAccount/Register";
         console.log(API_URL); */
- 
+
         const registerUserData = new RegisterData(name, email, password, confirmpassword, address);
         const isPasswordOK = registerUserData.checkPassword();
         console.log("Register - Password Confirmed = " + isPasswordOK);
@@ -59,32 +59,32 @@ const Register: FC<RegisterProps> = () => {
             console.log(response.data);
             console.log(response.status);
             localStorage.setItem("isRegisterd", response.data);
- 
+
             if(response.data)
             {
                 // SEND MAIL CON IN CC p.tardiolobonifazi@vivasoft.it
                 // To navigate to another component ConfirmedMail
                 navigate("/");
             }
-           
+            
             }
         })
         .catch((error) => {
             localStorage.clear();
             console.log(error);
         }); */
- 
+
         setIsRegistered(isPasswordOK);
         localStorage.setItem("isRegistered", String(isPasswordOK));
- 
+
         if(isPasswordOK){
-           
+            
             // To navigate to another component ConfirmedMail
             navigate("/");
         }
- 
+
     };
- 
+
     return (
         <>
             <Container maxWidth="xs">
@@ -115,7 +115,7 @@ const Register: FC<RegisterProps> = () => {
                         onChange={(e) => setName(e.target.value)}
                     />
                     </Grid>
- 
+
                     <Grid item xs={12}>
                     <TextField
                         required
@@ -183,5 +183,5 @@ const Register: FC<RegisterProps> = () => {
         </>
     );
 }
- 
+
 export default Register;
