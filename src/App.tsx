@@ -6,7 +6,8 @@ import Home from "./Home"
 import Login from "./Identity/Login/Login";
 import Logout from "./Identity/Logout/Logout";
 import Register from "./Identity/Register/Register";
-import InfoUtente from "./Components/InfoUtente";  
+import InfoUtente from './Components/InfoUtente';
+
 
 function App() {
   return (
